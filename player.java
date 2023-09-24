@@ -1,6 +1,6 @@
 public class player {
 
-    public static final String PLAYER_NAME = "PANTHER";
+    public static final String PLAYER_NAME = "PLAYER";
     public static final int PLAYER_HEALTH = 5;
     public static final int PLAYER_DMG = 2;
 
