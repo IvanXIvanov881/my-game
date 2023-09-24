@@ -25,7 +25,11 @@ public class main {
 
         //in next release Levels
 
-        //TODO FIELD >
+        //TODO LOCATION OF PLAYER AND ENEMIES>
+
+        //TODO LOCATION OF PLAYER AND ENEMIES<
+
+        //TODO FIELD>
         String[][] gameField = new String[20][30];
         for (int rows = 0; rows < gameField.length; rows++) {
             for (int cols = 0; cols < gameField[rows].length; cols++) {
@@ -54,7 +58,7 @@ public class main {
         for (int i = 0; i < 3; i++) {
             int enemyRow = rndEnemy.nextInt(0, 10);
             int enemyCol = rndEnemy.nextInt(0, 15);
-            gameField[enemyRow][enemyCol] = "Z";
+            gameField[enemyRow][enemyCol] = "Z" + i;
         }
         //todo ENEMY START POSITIONS <
 
@@ -66,13 +70,13 @@ public class main {
             if (playerMove.equals("W") || playerMove.equals("w")) {
 
             }
-            if (playerMove.equals("S") || playerMove.equals("s")){
+            if (playerMove.equals("S") || playerMove.equals("s")) {
 
             }
-            if (playerMove.equals("a") || playerMove.equals("A")){
+            if (playerMove.equals("a") || playerMove.equals("A")) {
 
             }
-            if (playerMove.equals("d") || playerMove.equals("D")){
+            if (playerMove.equals("d") || playerMove.equals("D")) {
 
             }
         }
