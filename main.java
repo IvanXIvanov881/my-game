@@ -60,16 +60,19 @@ public class main {
 
         //TODO PLAY >
         while (gameField[0][15].equals("P")) {
-            if (scanner.nextLine().equals("W") || scanner.nextLine().equals("w")) {
+
+            String playerMove = scanner.nextLine();
+
+            if (playerMove.equals("W") || playerMove.equals("w")) {
 
             }
-            if (scanner.nextLine().equals("S") || scanner.nextLine().equals("s")){
+            if (playerMove.equals("S") || playerMove.equals("s")){
 
             }
-            if (scanner.nextLine().equals("a") || scanner.nextLine().equals("A")){
+            if (playerMove.equals("a") || playerMove.equals("A")){
 
             }
-            if (scanner.nextLine().equals("d") || scanner.nextLine().equals("D")){
+            if (playerMove.equals("d") || playerMove.equals("D")){
 
             }
         }

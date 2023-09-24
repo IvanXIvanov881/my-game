@@ -7,7 +7,7 @@ public class enemy {
     protected int HP;
     protected int damage;
 
-    public player(String name, int HP, int damage) {
+    public void player() {
         this.name = ENEMY_NAME;
         this.HP = ENEMY_HEALTH;
         this.damage = ENEMY_DMG;
