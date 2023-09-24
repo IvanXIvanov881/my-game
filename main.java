@@ -26,7 +26,14 @@ public class main {
         //in next release Levels
 
         //TODO LOCATION OF PLAYER AND ENEMIES>
-
+        int playerRow = 19;
+        int playerCol = 14;
+        int z0Row = 0;
+        int z0Col = 0;
+        int z1Row = 0;
+        int z1Col = 0;
+        int z2Row = 0;
+        int z2Col = 0;
         //TODO LOCATION OF PLAYER AND ENEMIES<
 
         //TODO FIELD>
@@ -59,19 +66,43 @@ public class main {
             int enemyRow = rndEnemy.nextInt(0, 10);
             int enemyCol = rndEnemy.nextInt(0, 15);
             gameField[enemyRow][enemyCol] = "Z" + i;
+            for (int row = 0; row < gameField.length; row++) {
+                for (int col = 0; col < gameField[row].length; col++) {
+                    if (gameField[row][col].equals("Z0")) {
+                        z0Row = row;
+                        z0Col = col;
+                    }
+                    if (gameField[row][col].equals("Z1")) {
+                        z1Row = row;
+                        z1Col = col;
+                    }
+                    if (gameField[row][col].equals("Z2")) {
+                        z2Row = row;
+                        z2Col = col;
+                    }
+                }
+            }
         }
         //todo ENEMY START POSITIONS <
 
         //TODO PLAY >
-        while (gameField[0][15].equals("P")) {
+        while (!gameField[0][15].equals("P")) {
 
             String playerMove = scanner.nextLine();
 
-            if (playerMove.equals("W") || playerMove.equals("w")) {
-
+            if (playerMove.equals("up") || playerMove.equals("W") || playerMove.equals("w")) {
+                if (gameField[playerRow - 1][playerCol].equals(".")) {
+                    gameField[playerRow - 1][playerCol] = "P";
+                    gameField[playerRow][playerCol]=".";
+                    playerRow--;
+                }
             }
             if (playerMove.equals("S") || playerMove.equals("s")) {
-
+                if (gameField[playerRow + 1][playerCol].equals(".")) {
+                    gameField[playerRow + 1][playerCol] = "P";
+                    gameField[playerRow][playerCol]=".";
+                    playerRow++;
+                }
             }
             if (playerMove.equals("a") || playerMove.equals("A")) {
 
@@ -79,6 +110,7 @@ public class main {
             if (playerMove.equals("d") || playerMove.equals("D")) {
 
             }
+            System.out.println(fieldVisualisation(gameField));
         }
         //TODO PLAY<
 
