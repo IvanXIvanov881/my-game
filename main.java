@@ -79,7 +79,7 @@ public class main {
         System.out.println(fieldVisualisation(gameField));
         //todo PRINT VIEW <
     }
-//asd
+//asdasdasd
     public static StringBuilder fieldVisualisation(String[][] gameField) {
         StringBuilder sb = new StringBuilder();
         for (int row = 0; row < gameField.length; row++) {
