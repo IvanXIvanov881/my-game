@@ -90,25 +90,33 @@ public class main {
 
             String playerMove = scanner.nextLine();
 
-            if (playerMove.equals("up") || playerMove.equals("W") || playerMove.equals("w")) {
+            if (playerMove.equals("up") || playerMove.equals("w") || playerMove.equals("W")) {
                 if (gameField[playerRow - 1][playerCol].equals(".")) {
                     gameField[playerRow - 1][playerCol] = "P";
                     gameField[playerRow][playerCol]=".";
                     playerRow--;
                 }
             }
-            if (playerMove.equals("S") || playerMove.equals("s")) {
+            if (playerMove.equals("down") || playerMove.equals("s") || playerMove.equals("S")) {
                 if (gameField[playerRow + 1][playerCol].equals(".")) {
                     gameField[playerRow + 1][playerCol] = "P";
                     gameField[playerRow][playerCol]=".";
                     playerRow++;
                 }
             }
-            if (playerMove.equals("a") || playerMove.equals("A")) {
-
+            if (playerMove.equals("left") || playerMove.equals("a") || playerMove.equals("A")) {
+                if (gameField[playerRow][playerCol-1].equals(".")) {
+                    gameField[playerRow][playerCol-1] = "P";
+                    gameField[playerRow][playerCol]=".";
+                    playerCol--;
+                }
             }
-            if (playerMove.equals("d") || playerMove.equals("D")) {
-
+            if (playerMove.equals("right") || playerMove.equals("d") || playerMove.equals("D")) {
+                if (gameField[playerRow][playerCol+1].equals(".")) {
+                    gameField[playerRow][playerCol+1] = "P";
+                    gameField[playerRow][playerCol]=".";
+                    playerCol++;
+                }
             }
             System.out.println(fieldVisualisation(gameField));
         }
