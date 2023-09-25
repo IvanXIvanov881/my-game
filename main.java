@@ -7,8 +7,8 @@ public class main {
         Scanner scanner = new Scanner(System.in);
 
         //TODO
-        //FILED - huge size matrix@
-        //objects on the field@
+        //FILED - huge size matrix
+        //objects on the field
         //loots for Player and Enemy
 
         //Player - object
@@ -34,7 +34,6 @@ public class main {
         int z1Col = 0;
         int z2Row = 0;
         int z2Col = 0;
-        //TODO LOCATION OF PLAYER AND ENEMIES<
 
         //TODO FIELD>
         String[][] gameField = new String[20][30];
@@ -43,13 +42,12 @@ public class main {
                 gameField[rows][cols] = ".";
             }
         }
-        //TODO FIELD <
 
         gameField[19][14] = "P";
         gameField[0][15] = "X";
         Random rndEnemy = new Random();
 
-        //TODO OBJECT ON FIELD >
+        //TODO RANDOM OBJECT ON FIELD >
         for (int i = 0; i < 70; i++) {
             int rowObj = rndEnemy.nextInt(0, 20);
             int colObj = rndEnemy.nextInt(0, 30);
@@ -59,7 +57,6 @@ public class main {
                 gameField[rowObj][colObj] = "@";
             }
         }
-        //TODO OBJECT ON FIELD <
 
         //todo ENEMY START POSITIONS >
         for (int i = 0; i < 3; i++) {
@@ -83,7 +80,7 @@ public class main {
                 }
             }
         }
-        //todo ENEMY START POSITIONS <
+
 
         //TODO PLAY >
         while (!gameField[0][15].equals("P")) {
@@ -118,13 +115,14 @@ public class main {
                     playerCol++;
                 }
             }
+
             System.out.println(fieldVisualisation(gameField));
         }
         //TODO PLAY<
 
         //todo PRINT VIEW >
         System.out.println(fieldVisualisation(gameField));
-        //todo PRINT VIEW <
+
     }
 
     public static StringBuilder fieldVisualisation(String[][] gameField) {
