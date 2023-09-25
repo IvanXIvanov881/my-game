@@ -116,9 +116,29 @@ public class main {
                 }
             }
 
+            if (playerRow+1 == z0Row && playerCol == z0Col || playerCol+1 == z0Row && playerRow == z0Row || playerRow-1 == z0Row && playerCol == z0Col
+                    || playerCol-1 == z1Col && playerRow == z0Row || playerRow+1 == z0Row && playerCol + 1  == z0Col || playerRow-1 == z0Row && playerCol +1 == z0Col ||
+            playerRow-1 == z0Row && playerCol +1 == z0Col || playerRow-1 == z0Row && playerCol+1 == z0Col) {
+                gameField[playerRow][playerCol] = "ZZ";
+                System.out.println("Game Over! You Lose!");
+
+            }
+
+            if (playerRow > z0Row && playerCol > z0Col) {
+                if (gameField[z0Row+1][z0Col+1] == "-"){
+                    gameField[z0Row+1][z0Col+1] = "Z0";
+                    z0Row = z0Row+1;
+                    z0Col = z0Col+1;
+                }
+            }
+
             System.out.println(fieldVisualisation(gameField));
         }
-        //TODO PLAY<
+
+
+        //TODO Enemy Movement>
+
+
 
         //todo PRINT VIEW >
         System.out.println(fieldVisualisation(gameField));
