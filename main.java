@@ -90,45 +90,50 @@ public class main {
             if (playerMove.equals("up") || playerMove.equals("w") || playerMove.equals("W")) {
                 if (gameField[playerRow - 1][playerCol].equals(".")) {
                     gameField[playerRow - 1][playerCol] = "P";
-                    gameField[playerRow][playerCol]=".";
+                    gameField[playerRow][playerCol] = ".";
                     playerRow--;
                 }
             }
             if (playerMove.equals("down") || playerMove.equals("s") || playerMove.equals("S")) {
                 if (gameField[playerRow + 1][playerCol].equals(".")) {
                     gameField[playerRow + 1][playerCol] = "P";
-                    gameField[playerRow][playerCol]=".";
+                    gameField[playerRow][playerCol] = ".";
                     playerRow++;
                 }
             }
             if (playerMove.equals("left") || playerMove.equals("a") || playerMove.equals("A")) {
-                if (gameField[playerRow][playerCol-1].equals(".")) {
-                    gameField[playerRow][playerCol-1] = "P";
-                    gameField[playerRow][playerCol]=".";
+                if (gameField[playerRow][playerCol - 1].equals(".")) {
+                    gameField[playerRow][playerCol - 1] = "P";
+                    gameField[playerRow][playerCol] = ".";
                     playerCol--;
                 }
             }
             if (playerMove.equals("right") || playerMove.equals("d") || playerMove.equals("D")) {
-                if (gameField[playerRow][playerCol+1].equals(".")) {
-                    gameField[playerRow][playerCol+1] = "P";
-                    gameField[playerRow][playerCol]=".";
+                if (gameField[playerRow][playerCol + 1].equals(".")) {
+                    gameField[playerRow][playerCol + 1] = "P";
+                    gameField[playerRow][playerCol] = ".";
                     playerCol++;
                 }
             }
 
-            if (playerRow+1 == z0Row && playerCol == z0Col || playerCol+1 == z0Row && playerRow == z0Row || playerRow-1 == z0Row && playerCol == z0Col
-                    || playerCol-1 == z1Col && playerRow == z0Row || playerRow+1 == z0Row && playerCol + 1  == z0Col || playerRow-1 == z0Row && playerCol +1 == z0Col ||
-            playerRow-1 == z0Row && playerCol +1 == z0Col || playerRow-1 == z0Row && playerCol+1 == z0Col) {
+            if (playerRow + 1 == z0Row && playerCol == z0Col ||
+                    playerCol + 1 == z0Row && playerRow == z0Row ||
+                    playerRow - 1 == z0Row && playerCol == z0Col ||
+                    playerCol - 1 == z1Col && playerRow == z0Row ||
+                    playerRow + 1 == z0Row && playerCol + 1 == z0Col ||
+                    playerRow - 1 == z0Row && playerCol - 1 == z0Col ||
+                    playerRow - 1 == z0Row && playerCol + 1 == z0Col ||
+                    playerRow + 1 == z0Row && playerCol - 1 == z0Col) {
                 gameField[playerRow][playerCol] = "ZZ";
                 System.out.println("Game Over! You Lose!");
 
             }
 
             if (playerRow > z0Row && playerCol > z0Col) {
-                if (gameField[z0Row+1][z0Col+1] == "-"){
-                    gameField[z0Row+1][z0Col+1] = "Z0";
-                    z0Row = z0Row+1;
-                    z0Col = z0Col+1;
+                if (gameField[z0Row + 1][z0Col + 1] == ".") {
+                    gameField[z0Row + 1][z0Col + 1] = "Z0";
+                    z0Row = z0Row + 1;
+                    z0Col = z0Col + 1;
                 }
             }
 
@@ -137,7 +142,6 @@ public class main {
 
 
         //TODO Enemy Movement>
-
 
 
         //todo PRINT VIEW >
