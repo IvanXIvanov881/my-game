@@ -42,13 +42,12 @@ public class main {
                 gameField[rows][cols] = ".";
             }
         }
-
         gameField[19][14] = "P";
         gameField[0][15] = "X";
         Random rndEnemy = new Random();
 
         //TODO RANDOM OBJECT ON FIELD >
-        for (int i = 0; i < 70; i++) {
+        for (int i = 0; i < 50; i++) {
             int rowObj = rndEnemy.nextInt(0, 20);
             int colObj = rndEnemy.nextInt(0, 30);
             if (gameField[rowObj][colObj].equals("Z") || gameField[rowObj][colObj].equals("P") || gameField[rowObj][colObj].equals("X")) {
@@ -58,7 +57,7 @@ public class main {
             }
         }
 
-        //todo ENEMY START POSITIONS >
+        //TODO START POSITIONS >
         for (int i = 0; i < 3; i++) {
             int enemyRow = rndEnemy.nextInt(0, 10);
             int enemyCol = rndEnemy.nextInt(0, 15);
@@ -81,10 +80,8 @@ public class main {
             }
         }
 
-
         //TODO PLAY >
         while (!gameField[0][15].equals("P")) {
-
             String playerMove = scanner.nextLine();
 
             if (playerMove.equals("up") || playerMove.equals("w") || playerMove.equals("W")) {
@@ -115,37 +112,37 @@ public class main {
                     playerCol++;
                 }
             }
-
             if (playerRow + 1 == z0Row && playerCol == z0Col ||
                     playerCol + 1 == z0Row && playerRow == z0Row ||
                     playerRow - 1 == z0Row && playerCol == z0Col ||
-                    playerCol - 1 == z1Col && playerRow == z0Row ||
+                    playerCol - 1 == z0Col && playerRow == z0Row ||
                     playerRow + 1 == z0Row && playerCol + 1 == z0Col ||
                     playerRow - 1 == z0Row && playerCol - 1 == z0Col ||
                     playerRow - 1 == z0Row && playerCol + 1 == z0Col ||
                     playerRow + 1 == z0Row && playerCol - 1 == z0Col) {
                 gameField[playerRow][playerCol] = "ZZ";
-                System.out.println("Game Over! You Lose!");
-
+                System.out.println(fieldVisualisation(gameField));
+                System.out.println("Game Over!");
+                System.out.println("You Lose!");
+                return;
             }
-
             if (playerRow > z0Row && playerCol > z0Col) {
                 if (gameField[z0Row + 1][z0Col + 1] == ".") {
                     gameField[z0Row + 1][z0Col + 1] = "Z0";
+                    gameField[z0Row][z0Col] = ".";
                     z0Row = z0Row + 1;
                     z0Col = z0Col + 1;
                 }
             }
-
             System.out.println(fieldVisualisation(gameField));
         }
-
 
         //TODO Enemy Movement>
 
 
         //todo PRINT VIEW >
         System.out.println(fieldVisualisation(gameField));
+
     }
 
     public static StringBuilder fieldVisualisation(String[][] gameField) {
