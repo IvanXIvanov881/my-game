@@ -138,12 +138,15 @@ public class main {
         }
 
         //TODO Enemy Movement>
+        for (int i= 0; i < 9;i++){
 
+        }
 
         //todo PRINT VIEW >
         System.out.println(fieldVisualisation(gameField));
 
     }
+
     public static StringBuilder fieldVisualisation(String[][] gameField) {
         StringBuilder sb = new StringBuilder();
         for (int row = 0; row < gameField.length; row++) {
