@@ -79,7 +79,8 @@ public class main {
                 }
             }
         }
-
+        //todo PRINT VIEW >
+        System.out.println(fieldVisualisation(gameField));
         //TODO PLAY >
         while (!gameField[0][15].equals("P")) {
             String playerMove = scanner.nextLine();
@@ -112,6 +113,9 @@ public class main {
                     playerCol++;
                 }
             }
+
+
+            //TODO Enemy Movement>
             if (playerRow + 1 == z0Row && playerCol == z0Col ||
                     playerCol + 1 == z0Row && playerRow == z0Row ||
                     playerRow - 1 == z0Row && playerCol == z0Col ||
@@ -134,17 +138,10 @@ public class main {
                     z0Col = z0Col + 1;
                 }
             }
+
+            //todo PRINT VIEW >
             System.out.println(fieldVisualisation(gameField));
         }
-
-        //TODO Enemy Movement>
-        for (int i= 0; i < 9;i++){
-
-        }
-
-        //todo PRINT VIEW >
-        System.out.println(fieldVisualisation(gameField));
-
     }
 
     public static StringBuilder fieldVisualisation(String[][] gameField) {
