@@ -139,6 +139,7 @@ public class main {
                 }
             }
 
+
             //todo PRINT VIEW >
             System.out.println(fieldVisualisation(gameField));
         }
