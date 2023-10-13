@@ -114,7 +114,6 @@ public class main {
                 }
             }
 
-
             //TODO Enemy Movement>
             if (playerRow + 1 == z0Row && playerCol == z0Col ||
                     playerCol + 1 == z0Row && playerRow == z0Row ||
