@@ -35,6 +35,7 @@ public class main {
         int z2Row = 0;
         int z2Col = 0;
 
+
         //TODO FIELD>
         String[][] gameField = new String[20][30];
         for (int rows = 0; rows < gameField.length; rows++) {
