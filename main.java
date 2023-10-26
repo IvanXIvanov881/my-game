@@ -138,7 +138,7 @@ public class main {
                     z0Col = z0Col + 1;
                 }
             }
-
+int a = Integer.parseInt(scanner.nextLine());
 
             //todo PRINT VIEW >
             System.out.println(fieldVisualisation(gameField));
